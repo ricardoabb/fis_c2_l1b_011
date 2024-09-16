@@ -4,6 +4,9 @@ import React, { useState, useEffect } from 'react';
 
 
 import iconRight from '@/app/assets/icon-arrow-right.svg';
+import useCardStore from "../stores/CardStore";
+import { image } from "framer-motion/client";
+import { useModalStore } from "../stores/useModalStore";
 
 type TextBoxProps = {
   text: string;
@@ -18,6 +21,8 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
 
   const [displayBtn, setDisplayBtn] = useState<string>('hidden');
   const [animationNextBtn, setAnimationNextBtn] = useState<string>('animate-fade-in-out');
+  const { isImageActive, setImageActive, } = useCardStore();
+  const { image1 } = useModalStore();
 
   useEffect(() => {
     let currentText = '';
@@ -27,11 +32,17 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
       if (currentIndex < baseText.length) {
         currentText += baseText[currentIndex];
         if (currentText.length <= limit || (currentText.length > limit && baseText[currentIndex] !== ' ')) {
-          
+
           setDisplayedText(currentText);
-          baseText.length <= limit ? setDisplayBtn('') : setDisplayBtn('hidden')
-          baseText.length <= limit ? setAnimationNextBtn('') : setAnimationNextBtn('animate-fade-in-out')
-          
+          baseText.length <= limit ? setDisplayBtn('') : setDisplayBtn('hidden');
+          baseText.length <= limit ? setAnimationNextBtn('') : setAnimationNextBtn('animate-fade-in-out');
+          baseText.length <= limit ? setDisplayBtn('') : setDisplayBtn('hidden');
+          baseText.length <= limit && image1 !== 'undefined' ? setImageActive(true) : setImageActive(false);
+
+
+
+
+
         } else {
           setRemainingText(baseText.slice(currentIndex));
           setDisplayedText(currentText + '...');
@@ -40,7 +51,7 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
         currentIndex++;
       } else {
         clearInterval(intervalId);
-        
+
       }
     }, delay);
 
@@ -49,13 +60,13 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
   }, [baseText, limit, delay]);
 
   function handlerLoadText() {
-    setBaseText(remainingText);    
-       
+    setBaseText(remainingText);
+
   }
-  
+
   function handlerBack() {
     setBaseText(text);
-    
+
   }
 
   return (
@@ -63,10 +74,18 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
       <p>{displayedText}</p>
       {remainingText && <p style={{ display: 'none' }}>{remainingText}</p>}
       <div className="flex items-center ml-auto gap-3">
-        <a onClick={handlerBack} className={`${displayBtn} cursor-pointer animate-fade-in-out`}>voltar</a>
-        <div className={`w-4 py-3  none cursor-pointer ${animationNextBtn}  `}>
-          <a onClick={handlerLoadText}  ><Image width={100} height={100} src={iconRight} alt="carregar restante do texto..." /></a>
-        </div>
+        {
+
+          text.length >= limit && (
+
+            <>
+              <a onClick={handlerBack} className={`${displayBtn} cursor-pointer animate-fade-in-out`}>voltar</a><div className={`w-4 py-3  none cursor-pointer ${animationNextBtn}  `}>
+                <a onClick={handlerLoadText}><Image width={100} height={100} src={iconRight} alt="carregar restante do texto..." /></a>
+              </div>
+            </>
+          )
+
+        }
       </div>
 
     </div>

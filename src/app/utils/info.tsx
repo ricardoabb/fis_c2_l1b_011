@@ -1,12 +1,52 @@
+import { sub } from "framer-motion/client"
 
-export const info =
-  { intro: "Desde os tempos antigos, as pessoas reconheciam a necessidade de medir a massa de objetos para diversas finalidades, no entanto as unidades de medida variavam amplamente de região para região e eram frequentemente baseadas em objetos comuns, como grãos de cereais ou pedras. Muitos dos povos originários, por exemplo, sempre trabalharam com formas simples de medição de massa, como a comparação visual, comparando com pedras e frutos, ou também com balanças primitivas com cordas e cestos, posteriormente balanças com contrapesos. Com o avanço do tempo, surgiram sistemas de unidades mais padronizados, como o sistema métrico, que foi desenvolvido na França durante o final do século XVIII. Esse sistema introduziu o quilograma como a unidade fundamental de massa. A evolução das balanças acompanhou essa padronização das unidades de massa. Desde as antigas balanças de feixe utilizadas no Egito Antigo até as balanças de precisão modernas, houve um constante aprimoramento da tecnologia e da precisão. A introdução de materiais mais precisos, como o aço, e mais recentemente a tecnologia digital revolucionaram a precisão das balanças.",
+export const intro = [
+  {
+    title: "Histórico Geral",
+    intro: "Desde os tempos antigos, as pessoas reconheciam a necessidade de medir a massa de objetos para diversas finalidades, no entanto as unidades de medida variavam amplamente de região para região e eram frequentemente baseadas em objetos comuns, como grãos de cereais ou pedras.",
+    image: "/intro-img01.jpg",
+  },
+  {
+    title: "Histórico Geral",
+    intro: "Muitos dos povos originários, por exemplo, sempre trabalharam com formas simples de medição de massa, como a comparação visual, comparando com pedras e frutos, ou também com balanças primitivas com cordas e cestos, posteriormente balanças com contrapesos. Com o avanço do tempo, surgiram sistemas de unidades mais padronizados, como o sistema métrico, que foi desenvolvido na França durante o final do século XVIII. ",
+    image: "/intro-img02.jpg",
+  },
+  {
+    title: "Histórico Geral",
+    intro: "Esse sistema introduziu o quilograma como a unidade fundamental de massa. A evolução das balanças acompanhou essa padronização das unidades de massa. Desde as antigas balanças de feixe utilizadas no Egito Antigo até as balanças de precisão modernas, houve um constante aprimoramento da tecnologia e da precisão. A introdução de materiais mais precisos, como o aço, e mais recentemente a tecnologia digital revolucionaram a precisão das balanças.",
+    image: "/intro-img03.jpg",
+  },
+]
+export const conclusion = [
+  {
     conclusion: "A massa é uma das grandezas fundamentais da física moderna, essencial para a compreensão de fenômenos que vão desde a estrutura atômica até a cosmologia. A constante busca por uma definição mais precisa e universal do quilograma continua, com esforços para vinculá-lo a constantes físicas fundamentais. Aqui você pode ver uma evolução dessas ideias, de como se media a massa de um objeto comparando com a forma que se mede hoje. Mas isso não quer dizer que esse aparelho ainda não vai evoluir, e precisamos sempre acompanhar essa evolução!"
-   }
+  }
+]
 
 
 
 export const card = [
+  {
+    title: "Histórico Geral",
+    date: "1/3",
+    content: "Desde os tempos antigos, as pessoas reconheciam a necessidade de medir a massa de objetos para diversas finalidades, no entanto as unidades de medida variavam amplamente de região para região e eram frequentemente baseadas em objetos comuns, como grãos de cereais ou pedras.",
+    image: "/intro-img01.jpg",
+    subtitle: "Ilustração de mercado da época medieval",
+  },
+  {
+    title: "Histórico Geral",
+    date: "2/3",
+    content: "Muitos dos povos originários, por exemplo, sempre trabalharam com formas simples de medição de massa, como a comparação visual, comparando com pedras e frutos, ou também com balanças primitivas com cordas e cestos, posteriormente balanças com contrapesos. Com o avanço do tempo, surgiram sistemas de unidades mais padronizados, como o sistema métrico, que foi desenvolvido na França durante o final do século XVIII. ",
+    image: "/intro-img02.jpg",
+    subtitle: "Ilustração representando situações de escambo entre colonizados e colonizadores",
+  },
+  {
+    title: "Histórico Geral",
+    date: "3/3",
+    content: "Esse sistema introduziu o quilograma como a unidade fundamental de massa. A evolução das balanças acompanhou essa padronização das unidades de massa. Desde as antigas balanças de feixe utilizadas no Egito Antigo até as balanças de precisão modernas, houve um constante aprimoramento da tecnologia e da precisão. A introdução de materiais mais precisos, como o aço, e mais recentemente a tecnologia digital revolucionaram a precisão das balanças.",
+    image: "/intro-img03.jpg",
+    subtitle: "Ilustração de sociedade francesa do século XVIII",
+  },
   {
     title: "Antiguidade",
     date: "",
@@ -27,7 +67,7 @@ export const card = [
   },
   {
     title: "Renascimento ",
-    date: "\n(século XV-XVI)",
+    date: "(século XV-XVI)",
     content: "Ressurgimento do interesse pela ciência experimental, resultando em melhorias na precisão das balanças e no desenvolvimento de novos designs, como a balança desenvolvida por Georgius Agricola.",
     image: "/image-renascimento.webp",
   },
@@ -59,8 +99,7 @@ export const card = [
     title: "Conclusão",
     date: "",
     content: "A massa é uma das grandezas fundamentais da física moderna, essencial para a compreensão de fenômenos que vão desde a estrutura atômica até a cosmologia. A constante busca por uma definição mais precisa e universal do quilograma continua, com esforços para vinculá-lo a constantes físicas fundamentais. Aqui você pode ver uma evolução dessas ideias, de como se media a massa de um objeto comparando com a forma que se mede hoje. Mas isso não quer dizer que esse aparelho ainda não vai evoluir, e precisamos sempre acompanhar essa evolução!",
-    image: "/image-conclusion.webp",
+    video: "/image-conclusion.webp",
   },
-
 
 ]

@@ -1,29 +1,35 @@
 import { create } from "zustand";
 
 type State = {
-  activeId: string;
+  
   targetId: string;
   activeTitle: string;
   isActive: boolean;
-  setActive: (id: string) => void;
+  isImageActive: boolean;
+  
+  
   setTarget: (target: string) => void;
   setTitle: (target: string) => void;
+  setImageActive: (active: boolean) => void;
+  
 }
 
 const useCardStore = create<State>((set) => ({
-  activeId: '',
+  activeId: 0,
   activeTitle: "GRANDEZAS FÍSICAS",
   isActive: false,
   targetId: 'container',
+  isImageActive: false,
 
-  setActive: (id: string) => {
-    set(state => ({activeId: id}));   
-  },
+
   setTarget: (target: string) => {
     set(state => ({targetId: target}));   
   },
   setTitle: (title: string) => {
     set(state => ({activeTitle: title}));   
+  },
+  setImageActive: (active: boolean) => {
+    set(state => ({isImageActive: active}));   
   }
 
 }));
