@@ -76,14 +76,14 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
       <div className="flex items-center ml-auto gap-3">
         {
 
-          text.length >= limit && (
+          
 
             <>
               <a onClick={handlerBack} className={`${displayBtn} cursor-pointer animate-fade-in-out`}>voltar</a><div className={`w-4 py-3  none cursor-pointer ${animationNextBtn}  `}>
                 <a onClick={handlerLoadText}><Image width={100} height={100} src={iconRight} alt="carregar restante do texto..." /></a>
               </div>
             </>
-          )
+          
 
         }
       </div>

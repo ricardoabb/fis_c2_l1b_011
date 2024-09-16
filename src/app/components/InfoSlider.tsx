@@ -1,11 +1,7 @@
 "use client"
 import Image from "next/image";
-import iconBalance from '@/app/assets/icon-scale.svg';
 import iconImage from '@/app/assets/icon-image.png';
-import iconArrow from '@/app/assets/icon-arrow-right.svg';
-
 import React, { useState, useRef, useEffect } from 'react';
-import { AnimatedText } from "./AnimatedText";
 
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
@@ -21,10 +17,6 @@ import { Intro } from "./Intro";
 import {card } from "../utils/info";
 import useCardStore from "../stores/CardStore";
 import { useModalStore } from "../stores/useModalStore";
-import { log } from "console";
-
-
-
 
 export function InfoSlider() {
 
