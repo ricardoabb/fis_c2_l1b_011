@@ -13,8 +13,7 @@ import iconBalance from '@/app/assets/icon-scale.svg';
 export default function Home() {
 
   return (
-    <main id="top" className={`relative overflow-hidden bg-main bg-no-repeat bg-cover bg-center w-screen min-h-screen p-0 z-0 `}>
-      {/* <TextBox content={info.intro} hide={false} /> */}
+    <main id="top" className={`relative overflow-hidden bg-main bg-no-repeat bg-cover bg-center w-screen min-h-screen p-0 z-0 `}>      
       <div id="title" className={`flex items-center flex-col justify-center gap-2 p-4 `}>
           <div className="w-36">
             <Image
@@ -28,8 +27,8 @@ export default function Home() {
               unoptimized={true}
             />
           </div>
-          <hr className="w-full mt-4 border-b-1 border-sand-500" />
-          <div id="text">
+          
+          <div id="text" className="mt-8">
             <p className="text-sand-500 text-[1.7rem] md:text-6xl leading-normal font-bold md:font-semibold text-center mb-0">GRANDEZAS FÍSICAS</p>
             <h1 className="text-sand-500 text-[1.9rem] leading-none  text-center md:text-6xl">Massa e a Balança</h1>
           </div>
@@ -47,6 +46,7 @@ export default function Home() {
       </div>
 
       <BgElement
+        
         image="/bg-element.svg"   
         />
     </main>
