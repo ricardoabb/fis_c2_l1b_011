@@ -2,13 +2,10 @@
 import Image from "next/image";
 import iconImage from '@/app/assets/icon-image.png';
 import React, { useState, useRef, useEffect } from 'react';
-
 // import Swiper core and required modules
-import { Navigation,A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Navigation, A11y } from 'swiper/modules';
+import { register, SwiperContainer } from "swiper/element/bundle";
+register();
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -18,37 +15,40 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Intro } from "./Intro";
-import {card } from "../utils/info";
+import { card } from "../utils/info";
 import useCardStore from "../stores/CardStore";
 import { useModalStore } from "../stores/useModalStore";
 
 export function InfoSlider() {
 
-    const sliderRef: any = useRef(null);
+    const sliderRef: any = useRef<SwiperContainer>(null);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
+
     const [realIndex, setIndex] = useState(0);
     const [isEnd, setIsEnd] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
-    const {isImageActive } = useCardStore();
-    const {setActiveId, setModal, openModal, image1} = useModalStore();
+    const { isImageActive } = useCardStore();
+    const { setActiveId, setModal, openModal, image1 } = useModalStore();
 
     useEffect(() => {
-        setModal({image1: card[0].image, title: card[0].title, subtitle: card[0].subtitle });
+        setModal({ image1: card[0].image, title: card[0].title, subtitle: card[0].subtitle });
+ 
+        
+        register();
     }, [])
 
     const handleSlideChange = (swiper: any) => {
         setActiveIndex(swiper.activeIndex);
-        setModal({image1: `${card[swiper.activeIndex].image}`, title: `${card[swiper.activeIndex].title}`, subtitle: `${card[swiper.activeIndex].subtitle}`} );
-        setActiveId(swiper.activeIndex <= 2 ? 2 : swiper.activeIndex);
-        console.log("acticvID: ", swiper.activeIndex );       
-        
+        setModal({ image1: `${card[swiper.activeIndex].image}`, title: `${card[swiper.activeIndex].title}`, subtitle: `${card[swiper.activeIndex].subtitle}` });
+        setActiveId(swiper.activeIndex <= 2 ? 2 : swiper.activeIndex);       
+
     };
-    
-    function handleImage(){
-        console.log("ID:", activeIndex);   
-        openModal();
+
+    function handleImage() {
         
+        openModal();
+
     }
 
 
@@ -58,6 +58,7 @@ export function InfoSlider() {
             <Swiper onSlideChange={handleSlideChange}
                 modules={[Navigation, A11y]}
                 ref={sliderRef}
+                
                 onInit={(swiper: any) => {
                     swiper.params.navigation.prevEl = prevRef.current;
                     swiper.params.navigation.nextEl = nextRef.current;
@@ -65,15 +66,15 @@ export function InfoSlider() {
                     swiper.navigation.update();
                 }}
                 spaceBetween={50}
-                navigation
+
                 slidesPerView={1}
-                allowTouchMove={false}   
-                         
+                allowTouchMove={false}
+
             >
-               
+
                 {card.map((item, index) => (
                     <SwiperSlide key={index}>
-                        {activeIndex === index ? <Intro key={activeIndex} id={activeIndex} title={item.title} date={item.date} content={item.content}  hide={false} /> : null}
+                        {activeIndex === index ? <Intro key={activeIndex} id={activeIndex} title={item.title} date={item.date} content={item.content} hide={false} /> : null}
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -86,7 +87,7 @@ export function InfoSlider() {
                     onClick={() => {
                         setIndex(sliderRef.current?.swiper.realIndex);
                         setIsEnd(sliderRef.current?.swiper.isEnd);
-                        
+
 
                     }}>
                     <div className={`${realIndex == 0 ? "bg-opacity-[.5]" : "opacity-100"} scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}>
@@ -95,19 +96,19 @@ export function InfoSlider() {
                         </svg>
                     </div>
                 </button>
-                
-                    <div className={`transition-all ease-in-out  ${ isImageActive && image1 ? 'opacity-100 cursor-pointer': 'opacity-0 overflow-hidden w-0 h-0'} w-36 `} onClick={handleImage}>
-                        <Image
-                            src={iconImage}
-                            alt=""
-                            width={0}
-                            height={0}
-                            sizes='100vh'
-                            quality={100}
-                            priority={true}
-                            
-                        />
-                    </div>
+
+                <div className={`transition-all ease-in-out  ${isImageActive && image1 ? 'opacity-100 cursor-pointer' : 'opacity-0 overflow-hidden w-0 h-0'} w-36 `} onClick={handleImage}>
+                    <Image
+                        src={iconImage}
+                        alt=""
+                        width={0}
+                        height={0}
+                        sizes='100vh'
+                        quality={100}
+                        priority={true}
+
+                    />
+                </div>
 
                 <button
                     ref={nextRef}

@@ -54,8 +54,8 @@ export function Modal() {
                                             objectFit='cover'
                                             sizes='100vh'
                                             quality={100}
-                                            priority={true}
-                                            unoptimized={true}
+                                            // priority={true}
+                                            // unoptimized={true}
                                         />
                                     </div>
 
