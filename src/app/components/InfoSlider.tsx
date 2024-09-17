@@ -4,7 +4,11 @@ import iconImage from '@/app/assets/icon-image.png';
 import React, { useState, useRef, useEffect } from 'react';
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation,A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -62,7 +66,8 @@ export function InfoSlider() {
                 }}
                 spaceBetween={50}
                 slidesPerView={1}
-                allowTouchMove={false}            
+                allowTouchMove={false}   
+                         
             >
                
                 {card.map((item, index) => (
