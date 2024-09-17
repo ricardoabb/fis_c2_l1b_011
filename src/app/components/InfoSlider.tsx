@@ -65,6 +65,7 @@ export function InfoSlider() {
                     swiper.navigation.update();
                 }}
                 spaceBetween={50}
+                navigation
                 slidesPerView={1}
                 allowTouchMove={false}   
                          
@@ -104,7 +105,7 @@ export function InfoSlider() {
                             sizes='100vh'
                             quality={100}
                             priority={true}
-                            unoptimized={true}
+                            
                         />
                     </div>
 
