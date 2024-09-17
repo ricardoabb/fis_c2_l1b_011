@@ -8,6 +8,7 @@ import { register, SwiperContainer } from "swiper/element/bundle";
 register();
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperClass from 'swiper'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -21,7 +22,7 @@ import { useModalStore } from "../stores/useModalStore";
 
 export function InfoSlider() {
 
-    const sliderRef: any = useRef<SwiperContainer>(null);
+    const sliderRef: any = useRef<SwiperClass>()
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
