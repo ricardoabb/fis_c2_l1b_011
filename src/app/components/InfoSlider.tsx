@@ -101,7 +101,7 @@ export function InfoSlider() {
                 </button>
 
                 <div className={`transition-all ease-in-out  ${isImageActive && image1 ? 'opacity-100 cursor-pointer' : 'opacity-0 overflow-hidden w-0 h-0'} w-36 `} onClick={handleImage}>
-                    <Image
+                    {/* <Image
                         src={iconImage}
                         alt=""
                         width={0}
@@ -110,7 +110,13 @@ export function InfoSlider() {
                         quality={100}
                         priority={true}
 
-                    />
+                    /> */}
+                    <svg width="133" height="133" viewBox="0 0 133 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="66.5" cy="66.5" r="55.5" fill="#804C11" />
+                        <path fillRule="evenodd" clipRule="evenodd" d="M66.5 127C99.9132 127 127 99.9132 127 66.5C127 33.0868 99.9132 6 66.5 6C33.0868 6 6 33.0868 6 66.5C6 99.9132 33.0868 127 66.5 127ZM66.5 133C103.227 133 133 103.227 133 66.5C133 29.7731 103.227 0 66.5 0C29.7731 0 0 29.7731 0 66.5C0 103.227 29.7731 133 66.5 133Z" fill="#804C11" />
+                        <path fillRule="evenodd" clipRule="evenodd" d="M61.1418 42C59.1227 42 57.2599 43.087 56.2665 44.8449L55.5007 46.2H44.9714C41.8786 46.2 39.3714 48.7072 39.3714 51.8V85.4C39.3714 88.4928 41.8786 91 44.9714 91H86.9714C90.0642 91 92.5714 88.4928 92.5714 85.4V51.8C92.5714 48.7072 90.0642 46.2 86.9714 46.2H75.0422L74.2764 44.8449C73.283 43.087 71.4202 42 69.401 42H61.1418ZM65.2714 81.2C72.6168 81.2 78.5714 75.2454 78.5714 67.9C78.5714 60.5546 72.6168 54.6 65.2714 54.6C57.926 54.6 51.9714 60.5546 51.9714 67.9C51.9714 75.2454 57.926 81.2 65.2714 81.2Z" fill="white" />
+                    </svg>
+
                 </div>
 
                 <button className={`${isEnd ? "bg-opacity-[.5]" : "opacity-100"} flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
