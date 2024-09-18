@@ -59,7 +59,7 @@ export function InfoSlider() {
             <Swiper onSlideChange={handleSlideChange}
                 modules={[Navigation, A11y]}
                 ref={sliderRef}
-                
+                //navigation
                 onInit={(swiper: any) => {
                     swiper.params.navigation.prevEl = prevRef.current;
                     swiper.params.navigation.nextEl = nextRef.current;
@@ -82,7 +82,7 @@ export function InfoSlider() {
             <div className="flex items-center justify-around mt-12 mb-12 w-[350px] md:w-[750px] h-[133px] mx-auto">
 
 
-                <button
+                <button className={`${realIndex == 0 ? "bg-opacity-[.5]" : "opacity-100"} scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
                     ref={prevRef}
                     disabled={realIndex == 0}
                     onClick={() => {
@@ -91,7 +91,7 @@ export function InfoSlider() {
 
 
                     }}>
-                    <div className={`${realIndex == 0 ? "bg-opacity-[.5]" : "opacity-100"} scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}>
+                    <div >
                         <svg className="fill-[#804C11]" width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.2263 9.60883C14.2579 10.6533 14.2579 12.3467 13.2263 13.3912L4.50948 22.2166C3.47787 23.2611 1.80531 23.2611 0.773705 22.2166C-0.257901 21.1722 -0.257902 19.4788 0.773705 18.4343L7.62263 11.5L0.773705 4.5657C-0.257901 3.52123 -0.2579 1.82782 0.773705 0.783349C1.80531 -0.261117 3.47788 -0.261117 4.50948 0.783349L13.2263 9.60883Z" />
                         </svg>
@@ -111,14 +111,14 @@ export function InfoSlider() {
                     />
                 </div>
 
-                <button
+                <button className={ `${isEnd ? "bg-opacity-[.5]" : "opacity-100"} flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
                     ref={nextRef}
                     disabled={isEnd}
                     onClick={() => {
                         setIndex(sliderRef.current?.swiper.realIndex);
                         setIsEnd(sliderRef.current?.swiper.isEnd)
                     }}>
-                    <div className={` ${isEnd ? "bg-opacity-[.5]" : "opacity-100"} flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}>
+                    <div >
                         <svg className="fill-[#804C11]" width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.2263 9.60883C14.2579 10.6533 14.2579 12.3467 13.2263 13.3912L4.50948 22.2166C3.47787 23.2611 1.80531 23.2611 0.773705 22.2166C-0.257901 21.1722 -0.257902 19.4788 0.773705 18.4343L7.62263 11.5L0.773705 4.5657C-0.257901 3.52123 -0.2579 1.82782 0.773705 0.783349C1.80531 -0.261117 3.47788 -0.261117 4.50948 0.783349L13.2263 9.60883Z" />
                         </svg>
