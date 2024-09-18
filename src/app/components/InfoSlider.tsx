@@ -34,20 +34,20 @@ export function InfoSlider() {
 
     useEffect(() => {
         setModal({ image1: card[0].image, title: card[0].title, subtitle: card[0].subtitle });
- 
-        
+
+
         register();
     }, [])
 
     const handleSlideChange = (swiper: any) => {
         setActiveIndex(swiper.activeIndex);
         setModal({ image1: `${card[swiper.activeIndex].image}`, title: `${card[swiper.activeIndex].title}`, subtitle: `${card[swiper.activeIndex].subtitle}` });
-        setActiveId(swiper.activeIndex <= 2 ? 2 : swiper.activeIndex);       
+        setActiveId(swiper.activeIndex <= 2 ? 2 : swiper.activeIndex);
 
     };
 
     function handleImage() {
-        
+
         openModal();
 
     }
@@ -83,11 +83,13 @@ export function InfoSlider() {
 
 
                 <button className={`${realIndex == 0 ? "bg-opacity-[.5]" : "opacity-100"} scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
-                    ref={prevRef}
+                    //ref={prevRef}
                     disabled={realIndex == 0}
                     onClick={() => {
                         setIndex(sliderRef.current?.swiper.realIndex);
                         setIsEnd(sliderRef.current?.swiper.isEnd);
+                        sliderRef.current?.swiper.slidePrev();
+
 
 
                     }}>
@@ -111,12 +113,15 @@ export function InfoSlider() {
                     />
                 </div>
 
-                <button className={ `${isEnd ? "bg-opacity-[.5]" : "opacity-100"} flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
-                    ref={nextRef}
+                <button className={`${isEnd ? "bg-opacity-[.5]" : "opacity-100"} flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
+                    //ref={nextRef}
                     disabled={isEnd}
-                    onClick={() => {
+                    onClick={(swiper: any) => {
                         setIndex(sliderRef.current?.swiper.realIndex);
                         setIsEnd(sliderRef.current?.swiper.isEnd)
+                        sliderRef.current?.swiper.slideNext();
+
+
                     }}>
                     <div >
                         <svg className="fill-[#804C11]" width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
