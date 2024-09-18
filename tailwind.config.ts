@@ -46,12 +46,18 @@ const config: Config = {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(1.06)', opacity: '1' },
         },
+        spin: {
+          '0%': { transform: 'rotate(0deg)'},
+          '100%': { transform: 'rotate(360sdeg)'},
+        },
       },
       animation: {
         'fade-in-out': 'fade-in-out 1s infinite',
+        'spin': 'spin 1s linear infinite',
         slideIn: 'slideIn 1s ease-in-out forwards',
         pulse: 'pulse 2s infinite',
       },
+      
     },
 
   },
