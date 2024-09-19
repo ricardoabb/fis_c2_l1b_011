@@ -7,10 +7,11 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  
   theme: {
     colors: {
       transparent: 'transparent',
-      current: 'currentColor',
+      //current: 'currentColor',
       'sand': {
         100: '#c7b38f',
         200: '#bc863e',

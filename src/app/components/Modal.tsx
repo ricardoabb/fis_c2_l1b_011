@@ -73,7 +73,7 @@ export function Modal() {
 
                                     {subtitle !== 'undefined' && (
 
-                                        <h3 className='w-[85%] md:w-[500px] bg-opacity-80 mt-2 mx-auto text-[14px] text-center text-white bg-[#804C11] rounded-md font-bold py-4 px-8'>{subtitle}</h3>
+                                        <h3 className='w-[85%] md:w-[500px] bg-opacity-80 mt-2 mx-auto text-[14px] text-center text-[#fff] bg-[#804C11] rounded-md font-bold py-4 px-8'>{subtitle}</h3>
                                     )}
                                 </div>
                             </div>

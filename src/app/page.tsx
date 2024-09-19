@@ -41,7 +41,7 @@ export default function Home() {
           <ListCard />
         </div> */}
       </div>
-      <div className="absolute bottom-0 w-full">
+      <div className="absolute bottom-0 mt-12 w-full">
         <FooterMenu />
       </div>
 

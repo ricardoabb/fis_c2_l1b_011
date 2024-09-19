@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   
   return (
-    <html lang="en" className="[&::-webkit-scrollbar]:hidden scroll-smooth">
+    <html lang="en" className="[&::-webkit-scrollbar]:hidden scroll-smooth dark">
        <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </head>
