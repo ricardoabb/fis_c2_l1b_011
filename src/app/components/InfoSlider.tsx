@@ -43,6 +43,9 @@ export function InfoSlider() {
         setActiveIndex(swiper.activeIndex);
         setModal({ image1: `${card[swiper.activeIndex].image}`, title: `${card[swiper.activeIndex].title}`, subtitle: `${card[swiper.activeIndex].subtitle}` });
         setActiveId(swiper.activeIndex <= 2 ? 2 : swiper.activeIndex);
+        console.log('active ID: ',swiper.activeIndex);
+        
+        
 
     };
 
@@ -82,13 +85,15 @@ export function InfoSlider() {
             <div className="flex items-center justify-around mt-12 mb-28  w-[350px] md:w-[750px] h-[133px] mx-auto">
 
 
-                <button className={`${realIndex == 0 ? "bg-opacity-[.5]" : "opacity-100"} scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
+                <button className={`${sliderRef.current?.swiper.activeIndex == 0 ? "bg-opacity-[.5]" : "opacity-100"} scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
                     //ref={prevRef}
-                    disabled={realIndex == 0}
+                    disabled={sliderRef.current?.swiper.activeIndex  == 0}
                     onClick={() => {
                         setIndex(sliderRef.current?.swiper.realIndex);
                         setIsEnd(sliderRef.current?.swiper.isEnd);
                         sliderRef.current?.swiper.slidePrev();
+                        
+                        
 
 
 
@@ -119,9 +124,9 @@ export function InfoSlider() {
 
                 </div>
 
-                <button className={`${isEnd ? "bg-opacity-[.5]" : "opacity-100"} flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
+                <button className={`${sliderRef.current?.swiper.activeIndex == 11 ? "bg-opacity-[.5]" : "opacity-100"} flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
                     //ref={nextRef}
-                    disabled={isEnd}
+                    disabled={sliderRef.current?.swiper.activeIndex == 11}
                     onClick={(swiper: any) => {
                         setIndex(sliderRef.current?.swiper.realIndex);
                         setIsEnd(sliderRef.current?.swiper.isEnd)
