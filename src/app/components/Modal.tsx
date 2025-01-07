@@ -55,13 +55,14 @@ export function Modal() {
                                                 <div className="w-10 h-10 border-t-4 border-t-sand-200 border-4 border-sand-500 rounded-full  animate-spin"></div>
                                             </div>
                                         )}
-                                    <div className="select-none mx-auto w-[90%] md:w-[600px] h-fit h-[600px] bg-[#fff]  border-8 border-white overflow-hidden rounded-3xl">
+                                    <div className="select-none mx-auto w-[90%] md:w-[600px]  h-[auto] bg-[#fff]  border-8 border-white overflow-hidden rounded-3xl">
+                                        
                                         <Image
                                             src={image1!}
                                             alt=""
                                             width={0}
                                             height={0}
-                                            objectFit='cover'
+                                            objectFit='contain'
                                             sizes='100vh'
                                             quality={100}
                                             priority={true}
@@ -69,8 +70,7 @@ export function Modal() {
                                             onLoad={handleImageLoad}
                                             className={`transition-opacity duration-500 ease-in-out ${loading ? 'opacity-0' : 'opacity-100'}`}
                                         />
-                                    </div>
-
+                                    </div>                                    
                                     {subtitle !== 'undefined' && (
 
                                         <h3 className='w-[85%] md:w-[500px] bg-opacity-80 mt-2 mx-auto text-[14px] text-center text-[#fff] bg-[#804C11] rounded-md font-bold py-4 px-8'>{subtitle}</h3>

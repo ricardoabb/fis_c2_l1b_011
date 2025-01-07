@@ -20,6 +20,7 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
   const [baseText, setBaseText] = useState<string>(text);
 
   const [displayBtn, setDisplayBtn] = useState<string>('hidden');
+  const [displayBtnNext, setDisplayBtnNext] = useState<string>('hidden');
   const [animationNextBtn, setAnimationNextBtn] = useState<string>('animate-fade-in-out');
   const { isImageActive, setImageActive, } = useCardStore();
   const { image1 } = useModalStore();
@@ -35,12 +36,12 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
 
           setDisplayedText(currentText);
           baseText.length <= limit ? setDisplayBtn('') : setDisplayBtn('hidden');
+          text.length >= limit ? setDisplayBtnNext('') : setDisplayBtnNext('hidden');
           baseText.length <= limit ? setAnimationNextBtn('') : setAnimationNextBtn('animate-fade-in-out');
-          baseText.length <= limit ? setDisplayBtn('') : setDisplayBtn('hidden');
           baseText.length <= limit && image1 !== 'undefined' ? setImageActive(true) : setImageActive(false);
-
-
-
+          // console.log('limit: ', limit);
+          // console.log('base: ', baseText.length);
+          // console.log('current: ', currentText.length);
 
 
         } else {
@@ -78,11 +79,12 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
 
           
 
-            <>
-              <a onClick={handlerBack} className={`${displayBtn} cursor-pointer animate-fade-in-out`}>voltar</a><div className={`w-4 py-3  none cursor-pointer ${animationNextBtn}  `}>
+            <div className={`${displayBtnNext} flex items-center justify-center gap-2`}>
+              <a onClick={handlerBack} className={`${displayBtn} cursor-pointer animate-fade-in-out`}>voltar</a>
+              <div className={`w-4 py-3  none cursor-pointer ${animationNextBtn}  `}>
                 <a onClick={handlerLoadText}><Image width={100} height={100} src={iconRight} alt="carregar restante do texto..." /></a>
               </div>
-            </>
+            </div>
           
 
         }

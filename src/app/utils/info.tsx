@@ -8,7 +8,7 @@ export const intro = [
   },
   {
     title: "Histórico Geral",
-    intro: "Muitos dos povos originários, por exemplo, sempre trabalharam com formas simples de medição de massa, como a comparação visual, comparando com pedras e frutos, ou também com balanças primitivas com cordas e cestos, posteriormente balanças com contrapesos. Com o avanço do tempo, surgiram sistemas de unidades mais padronizados, como o sistema métrico, que foi desenvolvido na França durante o final do século XVIII. ",
+    intro: "Muitos dos povos originários, por exemplo, trabalharam com formas simples de medição de massa, como a comparação visual, comparando com pedras e frutos, ou também com balanças primitivas com cordas e cestos, posteriormente balanças com contrapesos. Com o avanço do tempo, surgiram sistemas de unidades mais padronizados, como o sistema métrico, que foi desenvolvido na França durante o final do século XVIII. ",
     image: "/intro-img02.jpg",
   },
   {
@@ -19,7 +19,7 @@ export const intro = [
 ]
 export const conclusion = [
   {
-    conclusion: "A massa é uma das grandezas fundamentais da física moderna, essencial para a compreensão de fenômenos que vão desde a estrutura atômica até a cosmologia. A constante busca por uma definição mais precisa e universal do quilograma continua, com esforços para vinculá-lo a constantes físicas fundamentais. Aqui você pode ver uma evolução dessas ideias, de como se media a massa de um objeto comparando com a forma que se mede hoje. Mas isso não quer dizer que esse aparelho ainda não vai evoluir, e precisamos sempre acompanhar essa evolução!"
+    conclusion: "A massa é uma das grandezas fundamentais da física moderna, essencial para a compreensão de fenômenos que vão desde a estrutura atômica até a cosmologia. A constante busca por uma definição mais precisa e universal do quilograma continua, com esforços para vinculá-lo a constantes físicas fundamentais. Neste infográfico você pôde ver uma evolução dessas ideias, de como se media a massa de um objeto desde a Antiguidade comparando com a forma que se mede hoje. Mas isso não quer dizer que esse aparelho ainda não vai evoluir, e precisamos sempre acompanhar essa evolução!"
   }
 ]
 
@@ -36,7 +36,7 @@ export const card = [
   {
     title: "Histórico Geral",
     date: "2/3",
-    content: "Muitos dos povos originários, por exemplo, sempre trabalharam com formas simples de medição de massa, como a comparação visual, comparando com pedras e frutos, ou também com balanças primitivas com cordas e cestos, posteriormente balanças com contrapesos. Com o avanço do tempo, surgiram sistemas de unidades mais padronizados, como o sistema métrico, que foi desenvolvido na França durante o final do século XVIII. ",
+    content: "Muitos dos povos originários, por exemplo, trabalharam com formas simples de medição de massa, como a comparação visual, comparando com pedras e frutos, ou também com balanças primitivas com cordas e cestos, posteriormente balanças com contrapesos. Com o avanço do tempo, surgiram sistemas de unidades mais padronizados, como o sistema métrico, que foi desenvolvido na França durante o final do século XVIII. ",
     image: "/intro-img02.jpg",
     subtitle: "Ilustração representando situações de escambo entre colonizados e colonizadores",
   },
@@ -84,7 +84,7 @@ export const card = [
     image: "/image-seculo-xix.webp",
   },
   {
-    title: "Século XV  ",
+    title: "Século XX  ",
     date: "",
     content: "Avanços na física levam a uma compreensão mais completa da relação entre massa, energia e espaço-tempo, conforme descrito pela teoria da relatividade de Einstein e pela mecânica quântica. Incorporação de eletrônica e tecnologia digital em balanças, resultando em equipamentos de alta precisão e automação.",
     image: "/image-seculo-xx.webp",
@@ -92,13 +92,13 @@ export const card = [
   {
     title: "Atualidade",
     date: "",
-    content: "Avanços na metalurgia e na mecânica permitem a produção em massa de balanças mais precisas e confiáveis, incluindo balanças analíticas para uso em laboratórios.",
+    content: "Balanças modernas são instrumentos altamente sofisticados, capazes de medir com precisão a massa de objetos em uma variedade de contextos, desde laboratórios científicos até ambientes comerciais e domésticos. O desenvolvimento contínuo de tecnologias, como a nanotecnologia e a inteligência artificial, promete avançar ainda mais a precisão e a eficiência das balanças.",
     image: "/image-atualidade.webp",
   },
   {
     title: "Conclusão",
     date: "",
-    content: "A massa é uma das grandezas fundamentais da física moderna, essencial para a compreensão de fenômenos que vão desde a estrutura atômica até a cosmologia. A constante busca por uma definição mais precisa e universal do quilograma continua, com esforços para vinculá-lo a constantes físicas fundamentais. Aqui você pode ver uma evolução dessas ideias, de como se media a massa de um objeto comparando com a forma que se mede hoje. Mas isso não quer dizer que esse aparelho ainda não vai evoluir, e precisamos sempre acompanhar essa evolução!",
+    content: "A massa é uma das grandezas fundamentais da física moderna, essencial para a compreensão de fenômenos que vão desde a estrutura atômica até a cosmologia. A constante busca por uma definição mais precisa e universal do quilograma continua, com esforços para vinculá-lo a constantes físicas fundamentais. Neste infográfico você pôde ver uma evolução dessas ideias, de como se media a massa de um objeto desde a Antiguidade comparando com a forma que se mede hoje. Mas isso não quer dizer que esse aparelho ainda não vai evoluir, e precisamos sempre acompanhar essa evolução!",
     video: "/image-conclusion.webp",
   },
 

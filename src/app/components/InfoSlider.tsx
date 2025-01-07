@@ -19,33 +19,38 @@ import { Intro } from "./Intro";
 import { card } from "../utils/info";
 import useCardStore from "../stores/CardStore";
 import { useModalStore } from "../stores/useModalStore";
+import { useSwiperStore } from "../stores/SwiperStore";
+
 
 export function InfoSlider() {
 
-    const sliderRef: any = useRef<SwiperClass>()
+
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
     const [realIndex, setIndex] = useState(0);
     const [isEnd, setIsEnd] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(0);
+    // const [activeIndex, setActiveIndex] = useState(0);
     const { isImageActive } = useCardStore();
-    const { setActiveId, setModal, openModal, image1 } = useModalStore();
+    const { setActiveId, setModal, openModal, image1, activeId } = useModalStore();
+    const { setSwiperInstance, swiperInstance } = useSwiperStore();
+
+
+
+
 
     useEffect(() => {
-        setModal({ image1: card[0].image, title: card[0].title, subtitle: card[0].subtitle });
+        setModal({ image1: card[activeId].image, title: card[activeId].title, subtitle: card[activeId].subtitle });
 
 
         register();
     }, [])
 
     const handleSlideChange = (swiper: any) => {
-        setActiveIndex(swiper.activeIndex);
+        setActiveId(swiper.activeIndex);
         setModal({ image1: `${card[swiper.activeIndex].image}`, title: `${card[swiper.activeIndex].title}`, subtitle: `${card[swiper.activeIndex].subtitle}` });
-        setActiveId(swiper.activeIndex <= 2 ? 2 : swiper.activeIndex);
-        console.log('active ID: ',swiper.activeIndex);
-        
-        
+        // setActiveId(swiper.activeIndex <= 2 ? 2 : swiper.activeIndex);
+        console.log('active ID: ', swiper.activeIndex);
 
     };
 
@@ -60,8 +65,9 @@ export function InfoSlider() {
     return (
         <>
             <Swiper onSlideChange={handleSlideChange}
+                onSwiper={(swiper) => setSwiperInstance(swiper)}
                 modules={[Navigation, A11y]}
-                ref={sliderRef}
+                // ref={sliderRef}
                 //navigation
                 onInit={(swiper: any) => {
                     swiper.params.navigation.prevEl = prevRef.current;
@@ -78,28 +84,30 @@ export function InfoSlider() {
 
                 {card.map((item, index) => (
                     <SwiperSlide key={index}>
-                        {activeIndex === index ? <Intro key={activeIndex} id={activeIndex} title={item.title} date={item.date} content={item.content} hide={false} /> : null}
+                        {activeId === index ? <Intro key={activeId} id={activeId} title={item.title} date={item.date} content={item.content} hide={false} /> : null}
                     </SwiperSlide>
                 ))}
             </Swiper>
             <div className="flex items-center justify-around mt-12 mb-28  w-[350px] md:w-[750px] h-[133px] mx-auto">
 
 
-                <button className={`${sliderRef.current?.swiper.activeIndex == 0 ? "bg-opacity-[.5]" : "opacity-100"} scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
-                    //ref={prevRef}
-                    disabled={sliderRef.current?.swiper.activeIndex  == 0}
+                <button
+                    className={`${swiperInstance?.activeIndex === 0 ? "bg-opacity-[.5]" : "opacity-100"
+                        } scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
+                    disabled={swiperInstance?.activeIndex === 0}
                     onClick={() => {
-                        setIndex(sliderRef.current?.swiper.realIndex);
-                        setIsEnd(sliderRef.current?.swiper.isEnd);
-                        sliderRef.current?.swiper.slidePrev();
-                        
-                        
-
-
-
-                    }}>
-                    <div >
-                        <svg className="fill-[#804C11]" width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        swiperInstance?.slidePrev(); // Navega para o slide anterior
+                    }}
+                >
+                    <div>
+                        <svg
+                            className="fill-[#804C11]"
+                            width="14"
+                            height="23"
+                            viewBox="0 0 14 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
                             <path d="M13.2263 9.60883C14.2579 10.6533 14.2579 12.3467 13.2263 13.3912L4.50948 22.2166C3.47787 23.2611 1.80531 23.2611 0.773705 22.2166C-0.257901 21.1722 -0.257902 19.4788 0.773705 18.4343L7.62263 11.5L0.773705 4.5657C-0.257901 3.52123 -0.2579 1.82782 0.773705 0.783349C1.80531 -0.261117 3.47788 -0.261117 4.50948 0.783349L13.2263 9.60883Z" />
                         </svg>
                     </div>
@@ -124,16 +132,16 @@ export function InfoSlider() {
 
                 </div>
 
-                <button className={`${sliderRef.current?.swiper.activeIndex == 11 ? "bg-opacity-[.5]" : "opacity-100"} flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
-                    //ref={nextRef}
-                    disabled={sliderRef.current?.swiper.activeIndex == 11}
-                    onClick={(swiper: any) => {
-                        setIndex(sliderRef.current?.swiper.realIndex);
-                        setIsEnd(sliderRef.current?.swiper.isEnd)
-                        sliderRef.current?.swiper.slideNext();
-
-
-                    }}>
+                <button
+                    className={`${swiperInstance?.activeIndex === 11 ? "bg-opacity-[.5]" : "opacity-100"
+                        } flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
+                    disabled={swiperInstance?.activeIndex === 11}
+                    onClick={() => {
+                        if (swiperInstance) {
+                            swiperInstance.slideNext(); // Navega para o próximo slide
+                        }
+                    }}
+                >
                     <div >
                         <svg className="fill-[#804C11]" width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.2263 9.60883C14.2579 10.6533 14.2579 12.3467 13.2263 13.3912L4.50948 22.2166C3.47787 23.2611 1.80531 23.2611 0.773705 22.2166C-0.257901 21.1722 -0.257902 19.4788 0.773705 18.4343L7.62263 11.5L0.773705 4.5657C-0.257901 3.52123 -0.2579 1.82782 0.773705 0.783349C1.80531 -0.261117 3.47788 -0.261117 4.50948 0.783349L13.2263 9.60883Z" />

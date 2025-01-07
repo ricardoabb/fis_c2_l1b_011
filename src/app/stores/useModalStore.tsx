@@ -24,7 +24,7 @@ interface ModalState {
 }
 
 export const useModalStore = create<ModalState>((set) => ({
-    activeId: 2,
+    activeId: 0,
     isOpen: false,
     image1: undefined,
     title: 'Histórico Geral',
